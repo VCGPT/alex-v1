@@ -1,46 +1,158 @@
-# Getting Started with Create React App
+# Predictive Internal Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend application for Predictive Internal, a platform for fund managers to manage their investments and limited partners.
+
+## Project Structure
+
+```
+src/
+├── components/         # Reusable UI components
+│   ├── AppCard.tsx
+│   ├── DashboardLayout.tsx
+│   ├── DashboardNavigation.tsx
+│   ├── DocumentCard.tsx
+│   ├── FundListCard.tsx
+│   ├── FundManagerLayout.tsx
+│   ├── FundManagerNavigation.tsx
+│   ├── InvestmentCard.tsx
+│   ├── LimitedPartnerListCard.tsx
+│   ├── Navigation.tsx
+│   ├── UpdateListCard.tsx
+│   └── UploadDocumentModal.tsx
+│
+├── pages/             # Page components
+│   ├── fundManagers/  # Fund manager specific pages
+│   │   ├── AddFundView.tsx
+│   │   ├── AddLimitedPartnerView.tsx
+│   │   ├── DocumentsListView.tsx
+│   │   ├── FundManagerPage.tsx
+│   │   ├── FundUpdatesListView.tsx
+│   │   ├── FundsListView.tsx
+│   │   ├── IndividualFundView.tsx
+│   │   ├── IndividualLPView.tsx
+│   │   ├── InvestmentView.tsx
+│   │   ├── InvestmentsListView.tsx
+│   │   ├── LimitedPartnersListView.tsx
+│   │   └── NewInvestment.tsx
+│   │
+│   ├── AppsDashboard.tsx
+│   ├── Home.tsx
+│   ├── LoginPage.tsx
+│   └── SettingsPage.tsx
+│
+├── services/          # API and service integrations
+│   └── api.ts
+│
+├── utils/            # Utility functions and helpers
+│   ├── constants.ts
+│   ├── dateUtils.ts
+│   ├── formUtils.ts
+│   ├── investmentUtils.ts
+│   ├── uiUtils.ts
+│   └── validationUtils.ts
+│
+├── types.ts          # TypeScript type definitions
+├── App.tsx           # Main application component
+└── index.tsx         # Application entry point
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/predictive-internal.git
+cd predictive-internal
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create a `.env` file in the root directory with the following variables:
+```
+REACT_APP_API_URL=http://localhost:3001
+```
+
+### Development
+
+To start the development server:
+
+```bash
+npm start
+```
+
+This will run the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits. You will also see any lint errors in the console.
+
+### Testing
+
+To run the test suite:
+
+```bash
+npm test
+```
+
+### Building for Production
+
+To create a production build:
+
+```bash
+npm run build
+```
+
+This will create an optimized production build in the `build` folder.
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (one-way operation)
 
-### `npm start`
+## Project Organization
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Components
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The `components` directory contains reusable UI components that are used across different pages. Each component is self-contained and follows a consistent pattern:
 
-### `npm test`
+- Functional components using TypeScript
+- Props interface definitions
+- Styled using Material-UI components
+- Error handling and loading states
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Pages
 
-### `npm run build`
+The `pages` directory contains the main page components that represent different routes in the application. The `fundManagers` subdirectory contains all pages specific to fund manager functionality.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Utils
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The `utils` directory contains various utility functions:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `formUtils.ts` - Form handling and validation
+- `dateUtils.ts` - Date formatting and manipulation
+- `investmentUtils.ts` - Investment-specific calculations
+- `uiUtils.ts` - UI-related helper functions
+- `validationUtils.ts` - Form validation utilities
 
-### `npm run eject`
+### Services
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The `services` directory contains API integration code and other external service connections. The main `api.ts` file handles all API calls to the backend.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Create a new branch for your feature
+2. Make your changes
+3. Submit a pull request
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## License
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is proprietary and confidential.
